@@ -19,29 +19,36 @@ fi
 if [ -d "./frontend" ]
 then
     cd "./frontend"
+    echo -e "\n\nCloning the frontend repositry\n=============================================="
     git pull
     cd "./.."
 else
-    git clone "https://github.com/libDrive/frontend"
+    echo -e "\n\nCloning the frontend repositry\n=============================================="
+    git clone "https://github.com/libDrive/frontend.git"
 fi
 
 if [ -d "./backend" ]
 then
     cd "./backend"
+    echo -e "\n\nCloning the backend repositry\n=============================================="
     git pull
     cd "./.."
 else
-    git clone "https://github.com/libDrive/backend"
+    echo -e "\n\nCloning the backend repositry\n=============================================="
+    git clone "https://github.com/libDrive/backend.git"
 fi
 
 cd "./frontend"
-yarn --network-timeout 1000000
+echo -e "\n\nInstalling frontend dependencies\n=============================================="
+npm install yarn --global
+yarn install --network-timeout 1000000
 
 if [ -d "./build" ]
 then
     rm -r "./build"
 fi
 
+echo -e "\n\nCreating server build\n=============================================="
 yarn run build
 
 if [ -d "./../backend/build" ]
@@ -61,5 +68,6 @@ else
     :
 fi
 
+echo -e "\n\nZipping build folder\n=============================================="
 "../bin/7z.exe" a "server.zip" "./server/backend/*"
-echo "Build saved to $PWD/server.zip"
+echo -e "\n\nBuild saved to $PWD/server.zip\n=============================================="
