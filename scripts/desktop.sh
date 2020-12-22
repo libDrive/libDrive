@@ -1,8 +1,10 @@
 #!/bin/bash
 
+echo -e "\n\nCreating desktop build\n=============================================="
+
 while [[ $os != @(1|2|3|"win"|"linux"|"mac") ]]
 do
-    echo -e "Which OS would you like to make a release for?\n(the build must be made on the specified OS)\n==============================================\n1) win\n2) linux\n3) mac"
+    echo -e "\n\nWhich OS would you like to make a release for?\n(the build must be made on the specified OS)\n==============================================\n1) win\n2) linux\n3) mac"
     read os
 done
 
@@ -35,8 +37,7 @@ fi
 
 cd "frontend"
 echo -e "\n\nInstalling frontend dependencies\n=============================================="
-npm install yarn --global
-yarn install --network-timeout 1000000
+yarn install --network-timeout 1000000 || npm install
 
 if [ -d "./dist" ]
 then
@@ -51,15 +52,15 @@ fi
 if [ $os == "win" ] || [ $os == "1" ]
 then
     echo -e "\n\nCreating windows build\n=============================================="
-    yarn run electron-build --win
+    yarn run electron-build --win || npm run electron-build --win
 elif [ $os == "linux" ] || [ $os == "2" ]
 then
     echo -e "\n\nCreating linux build\n=============================================="
-    yarn run electron-build --linux
+    yarn run electron-build --linux || npm run electron-build --linux
 elif [ $os == "mac" ] || [ $os == "3" ]
 then
     echo -e "\n\nCreating mac build\n=============================================="
-    yarn run electron-build --mac
+    yarn run electron-build --mac || npm run electron-build --mac
 else
     :
 fi
