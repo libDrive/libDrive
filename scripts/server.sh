@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo -e "\n\nCreating server build\n=============================================="
+
 if [ -d "./build" ]
 then
     cd "./build"
@@ -40,8 +42,7 @@ fi
 
 cd "./frontend"
 echo -e "\n\nInstalling frontend dependencies\n=============================================="
-npm install yarn --global
-yarn install --network-timeout 1000000
+yarn install --network-timeout 1000000 || npm install
 
 if [ -d "./build" ]
 then
@@ -49,7 +50,7 @@ then
 fi
 
 echo -e "\n\nCreating server build\n=============================================="
-yarn run build
+yarn run react-build || npm run react-build
 
 if [ -d "./../backend/build" ]
 then
