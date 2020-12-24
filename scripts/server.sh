@@ -22,6 +22,7 @@ if [ -d "./frontend" ]
 then
     cd "./frontend"
     echo -e "\n\nCloning the frontend repositry\n=============================================="
+    git reset --hard
     git pull
     cd "./.."
 else
@@ -33,7 +34,9 @@ if [ -d "./backend" ]
 then
     cd "./backend"
     echo -e "\n\nCloning the backend repositry\n=============================================="
+    git reset --hard
     git pull
+    commit_id=$(git rev-parse --short HEAD)
     cd "./.."
 else
     echo -e "\n\nCloning the backend repositry\n=============================================="
@@ -70,5 +73,5 @@ else
 fi
 
 echo -e "\n\nZipping build folder\n=============================================="
-"../bin/7z.exe" a "server.zip" "./server/backend/*"
-echo -e "\n\nBuild saved to $PWD/server.zip\n=============================================="
+"../bin/7z.exe" a "server-$commit_id.zip" "./server/backend/*"
+echo -e "\n\nBuild saved to $PWD/server-$commit_id.zip\n=============================================="

@@ -28,11 +28,16 @@ if [ -d "./frontend" ]
 then
     cd "./frontend"
     echo -e "\n\nCloning the frontend repositry\n=============================================="
+    git reset --hard
     git pull
+    commit_id=$(git rev-parse --short HEAD)
     cd "./.."
 else
     echo -e "\n\nCloning the frontend repositry\n=============================================="
     git clone "https://github.com/libDrive/frontend.git"
+    cd "./frontend"
+    commit_id=$(git rev-parse --short HEAD)
+    cd "./.."
 fi
 
 cd "frontend"
@@ -53,27 +58,26 @@ if [ $os == "win" ] || [ $os == "1" ]
 then
     echo -e "\n\nCreating windows build\n=============================================="
     yarn run electron-build --win || npm run electron-build --win
+    cd "./../.."
+    echo -e "\n\nZipping build folder\n=============================================="
+    "../bin/7z.exe" a "desktop-win-$commit_id.zip" "./desktop/frontend/dist/*"
+    echo -e "\n\nBuild saved to $PWD/desktop-win-$commit_id.zip\n=============================================="
 elif [ $os == "linux" ] || [ $os == "2" ]
 then
     echo -e "\n\nCreating linux build\n=============================================="
     yarn run electron-build --linux || npm run electron-build --linux
+    cd "./../.."
+    echo -e "\n\nZipping build folder\n=============================================="
+    "../bin/7z.exe" a "desktop-linux-$commit_id.zip" "./desktop/frontend/dist/*"
+    echo -e "\n\nBuild saved to $PWD/desktop-linux-$commit_id.zip\n=============================================="
 elif [ $os == "mac" ] || [ $os == "3" ]
 then
     echo -e "\n\nCreating mac build\n=============================================="
     yarn run electron-build --mac || npm run electron-build --mac
+    cd "./../.."
+    echo -e "\n\nZipping build folder\n=============================================="
+    "../bin/7z.exe" a "desktop-mac-$commit_id.zip" "./desktop/frontend/dist/*"
+    echo -e "\n\nBuild saved to $PWD/desktop-mac-$commit_id.zip\n=============================================="
 else
     :
 fi
-
-cd "./../.."
-
-if [ -f "./desktop.zip" ]
-then
-    rm "./desktop.zip"
-else
-    :
-fi
-
-echo -e "\n\nZipping build folder\n=============================================="
-"../bin/7z.exe" a "desktop.zip" "./desktop/frontend/dist/*"
-echo -e "\n\nBuild saved to $PWD/desktop.zip\n=============================================="
