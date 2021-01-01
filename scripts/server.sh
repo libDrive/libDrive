@@ -41,6 +41,9 @@ then
 else
     echo -e "\n\nCloning the backend repositry\n=============================================="
     git clone "https://github.com/libDrive/backend.git"
+	cd "./backend"
+    commit_id=$(git rev-parse --short HEAD)
+    cd "./.."
 fi
 
 cd "./frontend"
