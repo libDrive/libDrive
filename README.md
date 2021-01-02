@@ -65,3 +65,10 @@ Use this if a server has already been set up (you have the URL of the libDrive s
 - This is not a production build and will only work locally. To create a production build consider using a WSGI such as [Gunicorn](https://gunicorn.org/) (if you're on Windows Gunicorn will not work)
 
 # Screenshots
+
+![home](https://user-images.githubusercontent.com/54410649/103452551-421a2500-4cea-11eb-87e3-d782cb131465.png)
+![video](https://user-images.githubusercontent.com/54410649/103452565-578f4f00-4cea-11eb-9776-3741565582ff.png)
+![video info](https://user-images.githubusercontent.com/54410649/103452582-6c6be280-4cea-11eb-99ac-79d95c1ab4cc.png)
+![tv](https://user-images.githubusercontent.com/54410649/103452593-81e10c80-4cea-11eb-9887-f4501d9456ff.png)
+![tv season](https://user-images.githubusercontent.com/54410649/103452626-b228ab00-4cea-11eb-8769-f14134de5c1f.png)
+![admin](https://user-images.githubusercontent.com/54410649/103452635-cf5d7980-4cea-11eb-8c47-ece26866a638.png)
