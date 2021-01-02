@@ -64,11 +64,11 @@ Use this if a server has already been set up (you have the URL of the libDrive s
 
 ### Setup
 
-You could use Heroku to host libDrive, just click the button below and follow instructions
+The easiest method is deploying to Heroku, just click the button below and follow instructions
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/libDrive/heroku)
 
-If you would like to host libDrive some place else (such as a personal computer), do the following:
+If you would like to host libDrive some place else (such as a personal computer or server), do the following:
 
 - First make sure you have all the [prerequisites](#prerequisites)
 - Now download the latest server version from [here](https://github.com/libDrive/libDrive/releases/latest). The file name should look like this: `libDrive_Server.zip`
