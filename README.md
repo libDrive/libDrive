@@ -80,9 +80,10 @@ If you would like to host libDrive some place else (such as a personal computer 
 
 # Screenshots
 
-![home](https://user-images.githubusercontent.com/54410649/103452551-421a2500-4cea-11eb-87e3-d782cb131465.png)
-![video](https://user-images.githubusercontent.com/54410649/103452565-578f4f00-4cea-11eb-9776-3741565582ff.png)
+![home](https://user-images.githubusercontent.com/54410649/103462825-589f9b00-4d41-11eb-8f55-0b949540f2af.png)
+![video](https://user-images.githubusercontent.com/54410649/103462834-6d7c2e80-4d41-11eb-8cb6-c8a2e993271c.png)
 ![video info](https://user-images.githubusercontent.com/54410649/103452582-6c6be280-4cea-11eb-99ac-79d95c1ab4cc.png)
 ![tv](https://user-images.githubusercontent.com/54410649/103452593-81e10c80-4cea-11eb-9887-f4501d9456ff.png)
 ![tv season](https://user-images.githubusercontent.com/54410649/103452626-b228ab00-4cea-11eb-8769-f14134de5c1f.png)
 ![admin](https://user-images.githubusercontent.com/54410649/103452635-cf5d7980-4cea-11eb-8c47-ece26866a638.png)
+![footer](https://user-images.githubusercontent.com/54410649/103462848-93093800-4d41-11eb-8e7c-6481f8ecf073.png)
