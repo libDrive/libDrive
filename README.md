@@ -72,7 +72,9 @@ Use this if a server has already been set up (you have the URL of the libDrive s
 
 ### Setup
 
-The easiest method is deploying to Heroku, just click the button below and fill in the fields
+The easiest method is deploying to Heroku, just click the button below and fill in the `LIBDRIVE_CONFIG` field
+
+To generate the config, [go here](https://libdrive-oauth2.netlify.app/) and fill in the fields
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/libDrive/heroku)
 
