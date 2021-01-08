@@ -59,7 +59,10 @@ echo -e "\n\nZipping build folder\n=============================================
 if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" ]]; then
     "../bin/7z.exe" a "server-$commit_id.zip" "./backend/*"
 elif [[ $(uname) =~ "Linux" ]]; then
-    zip -r "server-$commit_id.zip" "./backend"
+    cd "./backend"
+    zip -r "server-$commit_id.zip" "./"
+    mv "server-$commit_id.zip" ".."
+    cd ".."
 else
     :
 fi
