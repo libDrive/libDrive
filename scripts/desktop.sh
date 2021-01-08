@@ -49,7 +49,10 @@ if [ $os == "win" ] || [ $os == "1" ]; then
     if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" ]]; then
         "../bin/7z.exe" a "desktop-win-$commit_id.zip" "./frontend/dist/*"
     elif [[ $(uname) =~ "Linux" ]]; then
-        zip -r "desktop-win-$commit_id.zip" "./frontend/dist"
+        cd "./frontend/dist"
+        zip -r "desktop-win-$commit_id.zip" "./"
+        mv "desktop-win-$commit_id.zip" "../.."
+        cd "../.."
     else
         :
     fi
@@ -62,7 +65,10 @@ elif [ $os == "linux" ] || [ $os == "2" ]; then
     if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" ]]; then
         "../bin/7z.exe" a "desktop-linux-$commit_id.zip" "./frontend/dist/*"
     elif [[ $(uname) =~ "Linux" ]]; then
-        zip -r "desktop-linux-$commit_id.zip" "./frontend/dist"
+        cd "./frontend/dist"
+        zip -r "desktop-linux-$commit_id.zip" "./"
+        mv "desktop-linux-$commit_id.zip" "../.."
+        cd "../.."
     else
         :
     fi
