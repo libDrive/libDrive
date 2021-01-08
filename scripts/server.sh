@@ -2,79 +2,67 @@
 
 echo -e "\n\nCreating server build\n=============================================="
 
-if [ -d "./build" ]
-then
+if [ -d "./build" ]; then
     cd "./build"
 else
     mkdir "./build"
     cd "./build"
 fi
 
-if [ -d "./server" ]
-then
-    cd "./server"
-else
-    mkdir "./server"
-    cd "./server"
-fi
-
-if [ -d "./frontend" ]
-then
+if [ -d "./frontend" ]; then
     cd "./frontend"
     echo -e "\n\nCloning the frontend repositry\n=============================================="
     git reset --hard
     git pull
-    cd "./.."
+    cd ".."
 else
     echo -e "\n\nCloning the frontend repositry\n=============================================="
     git clone "https://github.com/libDrive/frontend.git"
 fi
 
-if [ -d "./backend" ]
-then
+if [ -d "./backend" ]; then
     cd "./backend"
     echo -e "\n\nCloning the backend repositry\n=============================================="
     git reset --hard
     git pull
     commit_id=$(git rev-parse --short HEAD)
-    cd "./.."
+    cd ".."
 else
     echo -e "\n\nCloning the backend repositry\n=============================================="
     git clone "https://github.com/libDrive/backend.git"
-	cd "./backend"
+    cd "./backend"
     commit_id=$(git rev-parse --short HEAD)
-    cd "./.."
+    cd ".."
 fi
 
 cd "./frontend"
 echo -e "\n\nInstalling frontend dependencies\n=============================================="
-yarn install --network-timeout 1000000 || npm install
+yarn install --network-timeout 1000000
 
-if [ -d "./build" ]
-then
+if [ -d "./build" ]; then
     rm -r "./build"
 fi
 
 echo -e "\n\nCreating server build\n=============================================="
-yarn run react-build || npm run react-build
+yarn run react-build
 
-if [ -d "./../backend/build" ]
-then
-    rm -r "./../backend/build"
+if [ -d "../backend/build" ]; then
+    rm -r "../backend/build"
 else
     :
 fi
-mv "./build"  "./../backend"
+mv "./build" "../backend"
 
-cd "./../.."
-
-if [ -f "./server.zip" ]
-then
-    rm "./server.zip"
-else
-    :
-fi
+cd ".."
 
 echo -e "\n\nZipping build folder\n=============================================="
-"../bin/7z.exe" a "server-$commit_id.zip" "./server/backend/*"
+if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" ]]; then
+    "../bin/7z.exe" a "server-$commit_id.zip" "./backend/*"
+elif [[ $(uname) =~ "Linux" ]]; then
+    zip -r "server-$commit_id.zip" "./backend"
+else
+    :
+fi
 echo -e "\n\nBuild saved to $PWD/server-$commit_id.zip\n=============================================="
+
+cd ..
