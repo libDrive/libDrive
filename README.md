@@ -65,16 +65,16 @@ Use this if a server has already been set up (you have the URL of the libDrive s
   - Name the project anything you want, then click `Next`
   - Wait for the page titled `Configure your OAuth client` to show
   - From the dropdown menu, select `Web Server`
-  - Then under the `Authorized redirect URIs` field, put the following URL: `https://libdrive-oauth2.netlify.app`
+  - Then under the `Authorized redirect URIs` field, put the following URL: `https://libdrive-config.netlify.app`
   - Keep note of the `client_id` and `client_secret`
 - A [TMDB API](https://www.themoviedb.org/settings/api) key
 - [Python 3](https://www.python.org) (this isn't needed for Heroku deployment)
 
 ### Setup
 
-The easiest method is deploying to Heroku, just click the button below and fill in the `LIBDRIVE_CONFIG` field
+The easiest method is deploying to Heroku, just click the button below and fill in the `LIBDRIVE_CONFIG` field with the config
 
-To generate the config, [go here](https://libdrive-oauth2.netlify.app/) and fill in the fields
+To generate the config, [go here](https://libdrive-config.netlify.app/) and fill in the fields
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/libDrive/heroku)
 
@@ -84,9 +84,11 @@ If you would like to host libDrive some place else (such as a personal computer 
 - Now download the latest server version from [here](https://github.com/libDrive/libDrive/releases/latest). The file name should look like this: `libDrive_Server.zip`
 - Extract the downloaded zip file then open a termninal in the folder
 - In the termninal, run `pip install -r requirements.txt`
+- Next you need to generate a config
+- To generate the config, [go here](https://libdrive-config.netlify.app/) and fill in the fields
+- Set the config as the environment variable `LIBDRIVE_CONGIG`
 - Now your server is ready, to start it run `python main.py`
-- This is not a production build and will only work locally. To create a production build consider using a WSGI such as [Gunicorn](https://gunicorn.org/) (if you're on Windows Gunicorn will not work)
-- On first setup of the app, you need to access the settings page, to do this go to the path `/#/settings/login` and leave the secret field empty, then click Login. This will open a form with config information, fill it up and restart the app.
+- This is not a production build and will only work locally. To create a production build consider using a WSGI such as [Gunicorn](https://gunicorn.org/) (if you're on Windows Gunicorn will not work) and port forwarding
 
 # Screenshots
 
