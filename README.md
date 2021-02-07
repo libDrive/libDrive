@@ -85,6 +85,8 @@ To generate the config, [go here](https://libdrive-config.netlify.app/) and fill
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/libDrive/heroku)
 
+I recommend adding your Heroku app to **[Kaffeine](https://kaffeine.herokuapp.com/)**, which will ping your app every 30 minutes to prevent it from sleeping (Heroku automatically puts your app to sleep after inactivity)
+
 If you would like to host libDrive some place else (such as a personal computer or server), do the following:
 
 - First make sure you have all the [prerequisites](#prerequisites)
