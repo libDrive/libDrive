@@ -19,6 +19,12 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="https://heroku.com/deploy?template=https://github.com/libDrive/heroku">
+    <img src="https://www.herokucdn.com/deploy/button.svg" />
+  </a>
+</p>
+
 # What is this repo?
 
 libDrive is a media library manager, similar to [Plex](https://www.plex.tv), that organizes Google Drive folders and offers an intuitive interface to explore them
