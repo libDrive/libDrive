@@ -45,6 +45,7 @@ This repositry (<https://github.com/libDrive/libDrive>) only serves to display t
 - Make backend multithreaded
 - Stream videos directly to client rather than through server
 - Add custom video player able to play complexly encoded videos on desktop app
+- Add user signup and management
 
 # Installation
 
