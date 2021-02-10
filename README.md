@@ -59,58 +59,9 @@ This repositry (<https://github.com/libDrive/libDrive>) only serves to display t
 - Add custom video player able to play complexly encoded videos on desktop app
 - Add user signup and management
 
-# Installation
+# Wiki links
 
-## Client side
-
-Use this if a server has already been set up (you have the URL of the libDrive server)
-
-- **Windows:** To install libDrive download the file titled `libDrive_Desktop_win.exe` from [here](https://github.com/libDrive/libDrive/releases/latest)
-- **Linux:** To install libDrive download the latest file titled `libDrive_Desktop_linux.snap` from [here](https://github.com/libDrive/libDrive/releases/latest)
-
-## Server side
-
-### Prerequisites
-
-- A [Google Developers Console](https://console.developers.google.com) API client credentials
-  - To make one go to [this link](https://developers.google.com/drive/api/v3/quickstart/python)
-  - Then click the `Enable the Drive API` button
-  - Name the project anything you want, then click `Next`
-  - Wait for the page titled `Configure your OAuth client` to show
-  - From the dropdown menu, select `Web Server`
-  - Then under the `Authorized redirect URIs` field, put the following URL: `https://libdrive-config.netlify.app`
-  - Keep note of the `client_id` and `client_secret`
-- A [TMDB API](https://www.themoviedb.org/settings/api) key
-- [Python 3](https://www.python.org) (this isn't needed for Heroku deployment)
-
-### Setup
-
-The easiest method is deploying to Heroku, just click the button below and fill in the `LIBDRIVE_CONFIG` field with the config
-
-To generate the config, [go here](https://libdrive-config.netlify.app/) and fill in the fields
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/libDrive/heroku)
-
-I recommend adding your Heroku app to **[Kaffeine](https://kaffeine.herokuapp.com/)**, which will ping your app every 30 minutes to prevent it from sleeping (Heroku automatically puts your app to sleep after inactivity)
-
-If you would like to host libDrive some place else (such as a personal computer or server), do the following:
-
-- First make sure you have all the [prerequisites](#prerequisites)
-- Now download the latest server version from [here](https://github.com/libDrive/libDrive/releases/latest). The file name should look like this: `libDrive_Server.zip`
-- Extract the downloaded zip file then open a termninal in the folder
-- In the termninal, run `pip install -r requirements.txt`
-- Next you need to generate a config
-- To generate the config, [go here](https://libdrive-config.netlify.app/) and fill in the fields
-- Set the config as the environment variable `LIBDRIVE_CONGIG`
-- Now your server is ready, to start it run `python main.py`
-- This is not a production build and will only work locally. To create a production build consider using a WSGI such as [Gunicorn](https://gunicorn.org/) (if you're on Windows Gunicorn will not work) and port forwarding
-
-# Screenshots
-
-![home](https://user-images.githubusercontent.com/54410649/103462825-589f9b00-4d41-11eb-8f55-0b949540f2af.png)
-![video](https://user-images.githubusercontent.com/54410649/103462834-6d7c2e80-4d41-11eb-8cb6-c8a2e993271c.png)
-![video info](https://user-images.githubusercontent.com/54410649/103452582-6c6be280-4cea-11eb-99ac-79d95c1ab4cc.png)
-![tv](https://user-images.githubusercontent.com/54410649/103452593-81e10c80-4cea-11eb-9887-f4501d9456ff.png)
-![tv season](https://user-images.githubusercontent.com/54410649/103452626-b228ab00-4cea-11eb-8769-f14134de5c1f.png)
-![settings](https://user-images.githubusercontent.com/54410649/103509777-56425b80-4e7d-11eb-8433-82cbafef7d03.png)
-![footer](https://user-images.githubusercontent.com/54410649/103462848-93093800-4d41-11eb-8e7c-6481f8ecf073.png)
+- <https://github.com/libDrive/libDrive/wiki/Config> Config Information
+- <https://github.com/libDrive/libDrive/wiki/Screenshots> Screenshots
+- <https://github.com/libDrive/libDrive/wiki/Setup> Setup Guide
+- <https://github.com/libDrive/libDrive/wiki/Structure> Structure Requirements
