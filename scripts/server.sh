@@ -56,7 +56,7 @@ mv "./build" "../backend"
 cd ".."
 
 echo -e "\n\nZipping build folder\n=============================================="
-if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" ]]; then
+if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" || $(uname) =~ "MSYS" ]]; then
     "../bin/7z.exe" a "server-$commit_id.zip" "./backend/*"
 elif [[ $(uname) =~ "Linux" ]]; then
     cd "./backend"
