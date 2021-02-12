@@ -46,7 +46,7 @@ if [ $os == "win" ] || [ $os == "1" ]; then
     yarn run electron-build --win
     cd ".."
     echo -e "\n\nZipping build folder\n=============================================="
-    if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" ]]; then
+    if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" || $(uname) =~ "MSYS" ]]; then
         "../bin/7z.exe" a "desktop-win-$commit_id.zip" "./frontend/dist/*"
     elif [[ $(uname) =~ "Linux" ]]; then
         cd "./frontend/dist"
@@ -62,7 +62,7 @@ elif [ $os == "linux" ] || [ $os == "2" ]; then
     yarn run electron-build --linux
     cd ".."
     echo -e "\n\nZipping build folder\n=============================================="
-    if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" ]]; then
+    if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" || $(uname) =~ "MSYS" ]]; then
         "../bin/7z.exe" a "desktop-linux-$commit_id.zip" "./frontend/dist/*"
     elif [[ $(uname) =~ "Linux" ]]; then
         cd "./frontend/dist"
