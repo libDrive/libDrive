@@ -57,11 +57,11 @@ cd ".."
 
 echo -e "\n\nZipping build folder\n=============================================="
 if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" || $(uname) =~ "MSYS" ]]; then
-    "../bin/7z.exe" a "server-$commit_id.zip" "./backend/*"
+    "../bin/7z.exe" a "libDrive_Server_$commit_id.zip" "./backend/*"
 elif [[ $(uname) =~ "Linux" ]]; then
     cd "./backend"
-    zip -r "server-$commit_id.zip" "./"
-    mv "server-$commit_id.zip" ".."
+    zip -r "libDrive_Server_$commit_id.zip" "./"
+    mv "libDrive_Server_$commit_id.zip" ".."
     cd ".."
 else
     :
