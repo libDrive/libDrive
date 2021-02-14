@@ -46,15 +46,15 @@ This repository (<https://github.com/libDrive/libDrive>) only serves to display 
 
 - Automatically retrieves movie and TV show metadata based on file name
 - Movie/TV show synopsis, release date, posters etc. are displayed
-- Fast streaming speeds
+- Serverless video hosting support (Clouflare as an example)
 - User management, to allow multiple accounts
 - Search feature to find specific movies/TV shows
+- Multithreaded backend
 - Admin panel UI
 
 ## To do list
 
 - Add transcoding on server side
-- Make backend multithreaded
 - Stream videos directly to client rather than through server
 - Add custom video player able to play complexly encoded videos on desktop app
 - Add user signup and management
