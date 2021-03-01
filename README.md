@@ -61,6 +61,7 @@ This repository (<https://github.com/libDrive/libDrive>) only serves to display 
 
 # Wiki links
 
+- <https://github.com/libDrive/libDrive/wiki/Build> Build Instructions
 - <https://github.com/libDrive/libDrive/wiki/Config> Config Information
 - <https://github.com/libDrive/libDrive/wiki/Screenshots> Screenshots
 - <https://github.com/libDrive/libDrive/wiki/Setup> Setup Guide
