@@ -50,32 +50,32 @@ if [ $os == "win" ] || [ $os == "1" ]; then
     cd ".."
     echo -e "\n\nZipping build folder\n=============================================="
     if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" || $(uname) =~ "MSYS" ]]; then
-        "../bin/7z.exe" a "libDrive_Desktop_win_v$package_version.zip" "./frontend/dist/*"
+        "../bin/7z.exe" a "libDrive.Desktop.win.v$package_version.zip" "./frontend/dist/*"
     elif [[ $(uname) =~ "Linux" ]]; then
         cd "./frontend/dist"
-        zip -r "libDrive_Desktop_win_v$package_version.zip" "./"
-        mv "libDrive_Desktop_win_v$package_version.zip" "../.."
+        zip -r "libDrive.Desktop.win.v$package_version.zip" "./"
+        mv "libDrive.Desktop.win.v$package_version.zip" "../.."
         cd "../.."
     else
         :
     fi
-    echo -e "\n\nBuild saved to $PWD/desktop-win-$commit_id.zip\n=============================================="
+    echo -e "\n\nBuild saved to $PWD\n=============================================="
 elif [ $os == "linux" ] || [ $os == "2" ]; then
     echo -e "\n\nCreating linux build\n=============================================="
     yarn run electron-build --linux
     cd ".."
     echo -e "\n\nZipping build folder\n=============================================="
     if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" || $(uname) =~ "MSYS" ]]; then
-        "../bin/7z.exe" a "libDrive_Desktop_linux_v$package_version.zip" "./frontend/dist/*"
+        "../bin/7z.exe" a "libDrive.Desktop.linux.v$package_version.zip" "./frontend/dist/*"
     elif [[ $(uname) =~ "Linux" ]]; then
         cd "./frontend/dist"
-        zip -r "libDrive_Desktop_linux_v$package_version.zip" "./"
-        mv "libDrive_Desktop_linux_v$package_version.zip" "../.."
+        zip -r "libDrive.Desktop.linux.v$package_version.zip" "./"
+        mv "libDrive.Desktop.linux.v$package_version.zip" "../.."
         cd "../.."
     else
         :
     fi
-    echo -e "\n\nBuild saved to $PWD/desktop-linux-$commit_id.zip\n=============================================="
+    echo -e "\n\nBuild saved to $PWD\n=============================================="
 else
     :
 fi
