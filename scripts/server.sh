@@ -57,7 +57,7 @@ cd ".."
 
 echo -e "\n\nZipping build folder\n=============================================="
 if [[ $(uname) =~ "CYGWIN" || $(uname) =~ "MINGW" || $(uname) =~ "MSYS" ]]; then
-    "../bin/7z.exe" a "libDrive_Server_$commit_id.zip" "./backend/*" -xr\!.git/ -x\!.gitignore
+    "../bin/7z.exe" a "libDrive.Server.$commit_id.zip" "./backend/*" -xr\!.git/ -x\!.gitignore
 elif [[ $(uname) =~ "Linux" ]]; then
     cd "./backend"
     zip -r "libDrive_Server_$commit_id.zip" "./" -x ./.git/* ./.gitignore
