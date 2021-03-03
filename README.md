@@ -50,14 +50,15 @@ This repository (<https://github.com/libDrive/libDrive>) only serves to display 
 - User management, to allow multiple accounts
 - Search feature to find specific movies/TV shows
 - Multithreaded backend
+- Option to play pre-transcoded Google Drive videos
 - Admin panel UI
+- Option to install as a PWA (progressive web app)
 
 ## To do list
 
-- Add transcoding on server side
-- Stream videos directly to client rather than through server
 - Add custom video player able to play complexly encoded videos on desktop app
 - Add user signup and management
+- Add music media recognition
 
 # Wiki links
 
