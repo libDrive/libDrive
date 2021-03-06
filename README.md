@@ -53,11 +53,12 @@ This repository (<https://github.com/libDrive/libDrive>) only serves to display 
 - Option to play pre-transcoded Google Drive videos
 - Admin panel UI
 - Option to install as a PWA (progressive web app)
+- User authentication (and optionally user sign up)
+- No authentication (public server)
 
 ## To do list
 
 - Add custom video player able to play complexly encoded videos on desktop app
-- Add user signup and management
 - Add music media recognition
 
 # Wiki links
