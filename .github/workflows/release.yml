@@ -1,0 +1,75 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "The release version"
+        required: true
+        default: "v1.x.x"
+      backend:
+        description: "The backend repositry clone URL and extra commands"
+        required: true
+        default: "https://github.com/libDrive/backend.git"
+      backend-branch:
+        description: "The branch of the backend repositry to clone"
+        required: true
+        default: "main"
+      frontend:
+        description: "The frontend repositry clone URL and extra commands"
+        required: true
+        default: "https://github.com/libDrive/frontend.git"
+      frontend-branch:
+        description: "The branch of the frontend repositry to clone"
+        required: true
+        default: "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "15"
+      - name: Build Release
+        id: build_release
+        run: |
+          npm install --global yarn
+          git clone ${{ github.event.inputs.backend }} --branch ${{ github.event.inputs.backend-branch }} --depth 1
+          git clone ${{ github.event.inputs.frontend }} --branch ${{ github.event.inputs.frontend-branch }} --depth 1
+          mkdir "./libDrive.Server.${{ github.event.inputs.version }}"
+          mkdir "./libDrive.Server.${{ github.event.inputs.version }}/build"
+          mkdir "./libDrive.Server.${{ github.event.inputs.version }}/src"
+          cd ./frontend
+          yarn install
+          yarn run react-build
+          mv ./build/* "../libDrive.Server.${{ github.event.inputs.version }}/build"
+          cd ../backend
+          mv main.py requirements.txt "../libDrive.Server.${{ github.event.inputs.version }}"
+          mv ./src/* "../libDrive.Server.${{ github.event.inputs.version }}/src"
+          cd ..
+          cp README.md LICENSE "./libDrive.Server.${{ github.event.inputs.version }}"
+          cd "libDrive.Server.${{ github.event.inputs.version }}"
+          tar cvf "../libDrive.Server.${{ github.event.inputs.version }}.tar" *
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          release_name: "libDrive ${{ github.event.inputs.version }}"
+          body: ""
+          draft: true
+          prerelease: false
+      - name: Upload Release
+        id: upload_release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "libDrive.Server.${{ github.event.inputs.version }}.tar"
+          asset_name: "libDrive.Server.${{ github.event.inputs.version }}.tar"
+          asset_content_type: application/x-tar
