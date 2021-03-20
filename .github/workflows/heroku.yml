@@ -14,7 +14,7 @@ jobs:
       - name: Push to Heroku
         id: push_to_heroku
         run: |
-          git clone https://.:${{ secrets.PAT }}@github.com/libDrive/heroku 
+          git clone https://.:${{ secrets.PAT }}@github.com/${{ secrets.REPOSITRY }}
           mkdir ./release
           url=$(curl -s https://api.github.com/repos/libDrive/libDrive/releases/latest \
                   | grep browser_download_url \
