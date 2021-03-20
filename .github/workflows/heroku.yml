@@ -1,0 +1,33 @@
+name: Heroku
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Push to Heroku
+        id: push_to_heroku
+        run: |
+          git clone https://.:${{ secrets.PAT }}@github.com/libDrive/heroku 
+          mkdir ./release
+          url=$(curl -s https://api.github.com/repos/libDrive/libDrive/releases/latest \
+                  | grep browser_download_url \
+                  | grep libDrive.Server \
+                  | cut -d '"' -f 4)
+          curl -L "$url" | tar xvf - -C ./release
+          cd heroku
+          mv Procfile runtime.txt README.md app.json LICENSE .gitignore ../release
+          mkdir ../release/.git
+          mv .git/* ../release/.git
+          cd ../release
+          git config --global user.name "${{ secrets.NAME }}"
+          git config --global user.email "${{ secrets.EMAIL }}"
+          git add .
+          git commit -m "Automated release push"
+          git push
