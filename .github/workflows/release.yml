@@ -43,7 +43,7 @@ jobs:
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/src"
           cd ./frontend
           yarn install
-          yarn run react-build
+          yarn run build
           mv ./build/* "../libDrive.Server.${{ github.event.inputs.version }}/build"
           cd ../backend
           mv main.py requirements.txt "../libDrive.Server.${{ github.event.inputs.version }}"
