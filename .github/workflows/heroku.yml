@@ -20,6 +20,9 @@ jobs:
                   | grep browser_download_url \
                   | grep libDrive.Server \
                   | cut -d '"' -f 4)
+          tag=$(curl -s https://api.github.com/repos/libDrive/libDrive/releases/latest \
+                  | grep tag_name \
+                  | cut -d '"' -f 4)
           curl -L "$url" | tar xvf - -C ./release
           cd heroku
           mv Procfile runtime.txt README.md app.json LICENSE .gitignore ../release
@@ -29,5 +32,5 @@ jobs:
           git config --global user.name "${{ secrets.NAME }}"
           git config --global user.email "${{ secrets.EMAIL }}"
           git add .
-          git commit -m "Automated release push"
+          git commit -m "Automated release $tag"
           git push
