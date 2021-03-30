@@ -36,8 +36,8 @@ jobs:
         id: build_release
         run: |
           npm install --global yarn
-          git clone ${{ github.event.inputs.backend }} --branch ${{ github.event.inputs.backend-branch }} --depth 1
-          git clone ${{ github.event.inputs.frontend }} --branch ${{ github.event.inputs.frontend-branch }} --depth 1
+          git clone ${{ github.event.inputs.backend }} --branch ${{ github.event.inputs.backend-branch }} --depth 1 backend
+          git clone ${{ github.event.inputs.frontend }} --branch ${{ github.event.inputs.frontend-branch }} --depth 1 frontend
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/build"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/src"
@@ -56,7 +56,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           tag_name: ${{ github.event.inputs.version }}
           release_name: "libDrive ${{ github.event.inputs.version }}"
@@ -67,7 +67,7 @@ jobs:
         id: upload_release
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: "libDrive.Server.${{ github.event.inputs.version }}.tar"

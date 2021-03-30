@@ -10,19 +10,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Import GPG Key
         id: import_gpg_key
         uses: crazy-max/ghaction-import-gpg@v3
         with:
-          gpg-private-key: ${{ secrets.GPG_KEY }}
-          passphrase: ${{ secrets.GPG_PASS }}
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           git-user-signingkey: true
           git-commit-gpgsign: true
       - name: Push to Heroku
         id: push_to_heroku
-        uses: actions/checkout@v2
         run: |
-          git clone https://github.com/libDrive/heroku
+          git clone https://.:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.HEROKU_REPOSITRY }} heroku
           mkdir ./release
           url=$(curl -s https://api.github.com/repos/libDrive/libDrive/releases/latest \
                   | grep browser_download_url \
@@ -37,6 +37,9 @@ jobs:
           mkdir ../release/.git
           mv .git/* ../release/.git
           cd ../release
+          git config --local user.email "${{ steps.import_gpg_key.outputs.email }}"
+          git config --local user.name "${{ steps.import_gpg_key.outputs.name }}"
+          git config --local user.signingkey "${{ steps.import_gpg_key.outputs.keyid }}"
           git add .
           git commit -S -m "Automated release $tag"
           git push
