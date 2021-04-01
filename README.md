@@ -77,4 +77,4 @@ Help support me and libDrive by funding this project through one of the followin
 - [Ko-fi](https://ko-fi.com/eliasbenb)
 - [Bitcoin](https://bit.co.in/eliasbenb)
 
-<a href="https://www.bitcoinqrcodemaker.com"><img src="https://www.bitcoinqrcodemaker.com/api/?style=bitcoin&amp;address=bc1qxs4hmwcs0vnkkf073rng6lywfmk9wzr2xgf7l729h2es8cst7f2qyvgu0e" alt="Bitcoin QR Code Generator" height="300" width="300" border="0" /></a>
+<a href="bitcoin:bc1qxs4hmwcs0vnkkf073rng6lywfmk9wzr2xgf7l729h2es8cst7f2qyvgu0e"><img src="https://www.bitcoinqrcodemaker.com/api/?style=bitcoin&amp;address=bc1qxs4hmwcs0vnkkf073rng6lywfmk9wzr2xgf7l729h2es8cst7f2qyvgu0e" alt="Bitcoin QR Code Generator" height="300" width="300" border="0" /></a>
