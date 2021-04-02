@@ -40,7 +40,7 @@ This repository (<https://github.com/libDrive/libDrive>) only serves to display 
 ## Source code
 
 - To access the source code for the backend visit: <https://github.com/libDrive/backend>
-- To access the source code for the frontend visit: <https://github.com/libDrive/frontend>
+- To access the source code for the web frontend visit: <https://github.com/libDrive/web>
 
 ## Features supported
 
