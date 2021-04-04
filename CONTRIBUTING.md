@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- For the [backend](https://github.com/libDrive/backend) repository, we use [Python 3.6](https://python.org) and higher
+- For the [server](https://github.com/libDrive/server) repository, we use [Python 3.6](https://python.org) and higher
 - For the [web](https://github.com/libDrive/web) repository, we use [NodeJS 15](https://nodejs.org)
 - Have you read the [code of conduct](CODE_OF_CONDUCT.md)?
 - Check out the [existing issues](https://github.com/libDrive/libDrive/issues) before contributing
@@ -15,7 +15,7 @@ If the issue is accepted by me, you're ready to make a change
 
 ### Ready to make a change? Fork the repo
 
-If the issue was accepted, you can just fork the [backend](https://github.com/libDrive/backend) or [web](https://github.com/libDrive/web) repository and make it happen!
+If the issue was accepted, you can just fork the [server](https://github.com/libDrive/server) or [web](https://github.com/libDrive/web) repository and make it happen!
 
 This can be done through:
 
@@ -42,7 +42,7 @@ Once your pull request is merged, you will be proudly listed as a contributor in
 Check out all the other contributors!
 
 - <https://github.com/libDrive/libDrive/graphs/contributors>
-- <https://github.com/libDrive/backend/graphs/contributors>
+- <https://github.com/libDrive/server/graphs/contributors>
 - <https://github.com/libDrive/web/graphs/contributors>
 - <https://github.com/libDrive/cloudflare/graphs/contributors>
 - <https://github.com/libDrive/heroku/graphs/contributors>

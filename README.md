@@ -39,7 +39,7 @@ This repository (<https://github.com/libDrive/libDrive>) only serves to display 
 
 ## Source code
 
-- To access the source code for the backend visit: <https://github.com/libDrive/backend>
+- To access the source code for the server visit: <https://github.com/libDrive/server>
 - To access the source code for the web frontend visit: <https://github.com/libDrive/web>
 
 ## Features supported
@@ -49,7 +49,7 @@ This repository (<https://github.com/libDrive/libDrive>) only serves to display 
 - Serverless video hosting support (Clouflare as an example)
 - User management, to allow multiple accounts
 - Search feature to find specific movies/TV shows
-- Multithreaded backend
+- Multithreaded server
 - Option to play pre-transcoded Google Drive videos
 - Admin panel UI
 - Option to install as a PWA (progressive web app)
