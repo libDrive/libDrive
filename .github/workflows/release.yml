@@ -7,12 +7,12 @@ on:
         description: "The release version"
         required: true
         default: "v1.x.x"
-      backend:
-        description: "The backend repositry clone URL and extra commands"
+      server:
+        description: "The server repositry clone URL and extra commands"
         required: true
-        default: "https://github.com/libDrive/backend.git"
-      backend-branch:
-        description: "The branch of the backend repositry to clone"
+        default: "https://github.com/libDrive/server.git"
+      server-branch:
+        description: "The branch of the server repositry to clone"
         required: true
         default: "main"
       web:
@@ -36,7 +36,7 @@ jobs:
         id: build_release
         run: |
           npm install --global yarn
-          git clone ${{ github.event.inputs.backend }} --branch ${{ github.event.inputs.backend-branch }} --depth 1 backend
+          git clone ${{ github.event.inputs.server }} --branch ${{ github.event.inputs.server-branch }} --depth 1 server
           git clone ${{ github.event.inputs.web }} --branch ${{ github.event.inputs.web-branch }} --depth 1 web
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/build"
@@ -45,7 +45,7 @@ jobs:
           yarn install
           yarn run build
           mv ./build/* "../libDrive.Server.${{ github.event.inputs.version }}/build"
-          cd ../backend
+          cd ../server
           mv main.py requirements.txt "../libDrive.Server.${{ github.event.inputs.version }}"
           mv ./src/* "../libDrive.Server.${{ github.event.inputs.version }}/src"
           cd ..
@@ -56,7 +56,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           tag_name: ${{ github.event.inputs.version }}
           release_name: "libDrive ${{ github.event.inputs.version }}"
@@ -67,7 +67,7 @@ jobs:
         id: upload_release
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: "libDrive.Server.${{ github.event.inputs.version }}.tar"
