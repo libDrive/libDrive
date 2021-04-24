@@ -78,3 +78,7 @@ Help support me and libDrive by funding this project through one of the followin
 - [Bitcoin](https://bit.co.in/eliasbenb)
 
 <a href="https://bit.co.in/eliasbenb"><img src="https://www.bitcoinqrcodemaker.com/api/?style=bitcoin&amp;address=bc1qxs4hmwcs0vnkkf073rng6lywfmk9wzr2xgf7l729h2es8cst7f2qyvgu0e" alt="Bitcoin QR Code Generator" height="200" width="200" border="0" /></a>
+
+# Preview
+
+![preview](https://user-images.githubusercontent.com/54410649/115969336-7b063000-a54d-11eb-9cc9-9313608041bb.png)
