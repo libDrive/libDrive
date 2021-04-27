@@ -13,22 +13,35 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Import GPG Key
-        id: import_gpg_key
-        uses: crazy-max/ghaction-import-gpg@v3
-        with:
-          gpg-private-key: ${{ secrets.GPG_KEY }}
-          git-user-signingkey: true
-          git-commit-gpgsign: true
+        run: |
+          if [ ! -z ${{ secrets.GPG_KEY }} ]; then
+            while IFS= read -r line; do
+              echo "$line" >> gpg.asc
+            done <<< "${{ secrets.GPG_KEY }}"
+            gpg_str=$(gpg --list-packets gpg.asc | grep "^:user ID packet" | sed -r "s/^.{18}//" | sed "s/.$//")
+            echo $gpg_str
+            email=`echo $gpg_str | grep -Po "(?<=\<).*?(?=\>)"`
+            name=`echo $gpg_str | sed "s/.(.*//"`
+            signing_key=$(gpg --list-packets gpg.asc | grep -m 1 "*keyid:" | sed -r "s/^.{7}//")
+            git config --global user.email "$email"
+            git config --global user.name "$name"
+            git config --global user.signingkey "$signing_key"
+            gpg --import gpg.asc
+          else
+            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config --global user.name "github-actions[bot]"
+          fi
       - name: Push to Heroku
         id: push_to_heroku
         run: |
+          echo ${{ github.repository }}
           git clone https://.:${{ secrets.PAT }}@github.com/${{ secrets.HEROKU_REPOSITRY }} heroku
           mkdir ./release
-          url=$(curl -s https://api.github.com/repos/libDrive/libDrive/releases/latest \
+          url=$(curl -s "https://api.github.com/repos/${{ github.repository }}/releases/latest" \
                   | grep browser_download_url \
                   | grep libDrive.Server \
                   | cut -d '"' -f 4)
-          tag=$(curl -s https://api.github.com/repos/libDrive/libDrive/releases/latest \
+          tag=$(curl -s https://api.github.com/repos/${{ github.repository }}/releases/latest \
                   | grep tag_name \
                   | cut -d '"' -f 4)
           curl -L "$url" | tar xvf - -C ./release
@@ -37,9 +50,10 @@ jobs:
           mkdir ../release/.git
           mv .git/* ../release/.git
           cd ../release
-          git config --local user.email "${{ steps.import_gpg_key.outputs.email }}"
-          git config --local user.name "${{ steps.import_gpg_key.outputs.name }}"
-          git config --local user.signingkey "${{ steps.import_gpg_key.outputs.keyid }}"
           git add .
-          git commit -S -m "Automated release $tag"
+          if [ ! -z ${{ secrets.GPG_KEY }} ]; then
+            git commit -S -m "Automated release $tag"
+          else
+            git commit -m "Automated release $tag"
+          fi
           git push
