@@ -26,7 +26,7 @@
 </p>
 
 <p align="center">
-  <a href="https://t.me/libdrive_support">
+  <a href="https://t.me/libdrive_news">
     <img src="https://cdn0.iconfinder.com/data/icons/social-network-24/512/Telegram-64.png" />
   </a>
 </p>
