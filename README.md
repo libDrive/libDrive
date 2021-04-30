@@ -39,8 +39,8 @@ This repository (<https://github.com/libDrive/libDrive>) only serves to display 
 
 ## Source code
 
-- To access the source code for the server visit: <https://github.com/libDrive/server>
-- To access the source code for the web frontend visit: <https://github.com/libDrive/web>
+- Server: [libDrive/server](https://github.com/libDrive/server)
+- Web: [libDrive/web](https://github.com/libDrive/web)
 
 ## Features supported
 
@@ -63,11 +63,11 @@ This repository (<https://github.com/libDrive/libDrive>) only serves to display 
 
 # Wiki links
 
-- <https://github.com/libDrive/libDrive/wiki/Build> Build Instructions
-- <https://github.com/libDrive/libDrive/wiki/Config> Config Information
-- <https://github.com/libDrive/libDrive/wiki/Screenshots> Screenshots
-- <https://github.com/libDrive/libDrive/wiki/Setup> Setup Guide
-- <https://github.com/libDrive/libDrive/wiki/Structure> Structure Requirements
+- Build: [wiki/Build](https://github.com/libDrive/libDrive/wiki/Build) 
+- Config: [wiki/Config](https://github.com/libDrive/libDrive/wiki/Config)
+- Screenshots: [wiki/Screenshots](https://github.com/libDrive/libDrive/wiki/Screenshots)
+- Setup: [wiki/Setup](https://github.com/libDrive/libDrive/wiki/Setup)
+- Structure: [wiki/Structure](https://github.com/libDrive/libDrive/wiki/Structure)
 
 # Funding
 
