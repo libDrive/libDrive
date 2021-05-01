@@ -42,34 +42,30 @@ jobs:
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/build"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/src"
           cd ./web
+          web_commit_id=$(git rev-parse --verify HEAD)
           yarn install
           yarn run build
           mv ./build/* "../libDrive.Server.${{ github.event.inputs.version }}/build"
           cd ../server
+          server_commit_id=$(git rev-parse --verify HEAD)
           mv main.py requirements.txt "../libDrive.Server.${{ github.event.inputs.version }}"
           mv ./src/* "../libDrive.Server.${{ github.event.inputs.version }}/src"
           cd ..
           cp README.md LICENSE "./libDrive.Server.${{ github.event.inputs.version }}"
           cd "libDrive.Server.${{ github.event.inputs.version }}"
           tar cvf "../libDrive.Server.${{ github.event.inputs.version }}.tar" *
+          cd ..
+          body="# ${{ github.event.inputs.version }}\n\n## Changelog\n\n## Working trees:\n\n- https://github.com/libDrive/server/commit/$server_commit_id\n- https://github.com/libDrive/web/commit/$web_commit_id\n\n## Screenshots"
+          echo -e $body > body.txt
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           tag_name: ${{ github.event.inputs.version }}
-          release_name: "libDrive ${{ github.event.inputs.version }}"
-          body: ""
+          name: "libDrive ${{ github.event.inputs.version }}"
+          body_path: "body.txt"
           draft: true
           prerelease: false
-      - name: Upload Release
-        id: upload_release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "libDrive.Server.${{ github.event.inputs.version }}.tar"
-          asset_name: "libDrive.Server.${{ github.event.inputs.version }}.tar"
-          asset_content_type: application/x-tar
+          files: "libDrive.Server.${{ github.event.inputs.version }}.tar"
