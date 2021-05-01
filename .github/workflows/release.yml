@@ -10,7 +10,7 @@ on:
       server:
         description: "The server repositry clone URL and extra commands"
         required: true
-        default: "https://github.com/libDrive/server.git"
+        default: "libDrive/server"
       server-branch:
         description: "The branch of the server repositry to clone"
         required: true
@@ -18,7 +18,7 @@ on:
       web:
         description: "The web repositry clone URL and extra commands"
         required: true
-        default: "https://github.com/libDrive/web.git"
+        default: "libDrive/web"
       web-branch:
         description: "The branch of the web repositry to clone"
         required: true
@@ -36,8 +36,8 @@ jobs:
         id: build_release
         run: |
           npm install --global yarn
-          git clone ${{ github.event.inputs.server }} --branch ${{ github.event.inputs.server-branch }} --depth 1 server
-          git clone ${{ github.event.inputs.web }} --branch ${{ github.event.inputs.web-branch }} --depth 1 web
+          git clone https://.:${{ secrets.PAT }}@github.com/${{ github.event.inputs.server }} --branch ${{ github.event.inputs.server-branch }} --depth 1 server
+          git clone https://.:${{ secrets.PAT }}@github.com/${{ github.event.inputs.web }} --branch ${{ github.event.inputs.web-branch }} --depth 1 web
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/build"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/src"

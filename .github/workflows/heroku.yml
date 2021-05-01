@@ -12,48 +12,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Import GPG Key
-        run: |
-          if [ ! -z ${{ secrets.GPG_KEY }} ]; then
-            while IFS= read -r line; do
-              echo "$line" >> gpg.asc
-            done <<< "${{ secrets.GPG_KEY }}"
-            gpg_str=$(gpg --list-packets gpg.asc | grep "^:user ID packet" | sed -r "s/^.{18}//" | sed "s/.$//")
-            echo $gpg_str
-            email=`echo $gpg_str | grep -Po "(?<=\<).*?(?=\>)"`
-            name=`echo $gpg_str | sed "s/.(.*//"`
-            signing_key=$(gpg --list-packets gpg.asc | grep -m 1 "*keyid:" | sed -r "s/^.{7}//")
-            git config --global user.email "$email"
-            git config --global user.name "$name"
-            git config --global user.signingkey "$signing_key"
-            gpg --import gpg.asc
-          else
-            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git config --global user.name "github-actions[bot]"
-          fi
       - name: Push to Heroku
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         id: push_to_heroku
         run: |
-          echo ${{ github.repository }}
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
           git clone https://.:${{ secrets.PAT }}@github.com/${{ secrets.HEROKU_REPOSITRY }} heroku
           mkdir ./release
-          url=$(curl -s "https://api.github.com/repos/${{ github.repository }}/releases/latest" \
-                  | grep browser_download_url \
-                  | grep libDrive.Server \
-                  | cut -d '"' -f 4)
-          tag=$(curl -s https://api.github.com/repos/${{ github.repository }}/releases/latest \
-                  | grep tag_name \
-                  | cut -d '"' -f 4)
-          curl -L "$url" | tar xvf - -C ./release
+          url=$(curl "https://api.github.com/repos/eliasbenb-dump/libDrive/releases/tags/v1.3.0" | grep -Po '"browser_download_url": "\K.*?(?=")')
+          curl -L $url | tar xvf - -C ./release
           cd heroku
           mv Procfile runtime.txt README.md app.json LICENSE .gitignore ../release
           mkdir ../release/.git
           mv .git/* ../release/.git
           cd ../release
           git add .
-          if [ ! -z ${{ secrets.GPG_KEY }} ]; then
-            git commit -S -m "Automated release $tag"
-          else
-            git commit -m "Automated release $tag"
-          fi
+          git commit -m "Automated release ${{ github.event.release.tag_name }}"
           git push
