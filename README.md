@@ -75,12 +75,8 @@ Help support me and libDrive by funding this project through one of the followin
 
 - [Paypal](https://paypal.me/eliasbenb)
 - [Ko-fi](https://ko-fi.com/eliasbenb)
-
-## Crypto
-
-- `BTC` : `31q2jEKkRDJAmTfKxQqTfn7hsUYrsDuosP`
-- `ETH` : `0x0E2BC01563e3Fc2da48E5E10f7882Fd3A56d97F2`
-- `LTC` : `MC8fXWgEVzULFmzzsgtXNoJ6cfm3a1dhBV`
+- `BTC` : `16J6PLKD4EmVkPYsbqgzVGjL7PaX7wQ4Hd`
+- `BCH` : `qqapgvst8mxtex4xnv8kxjdvl0rktc39uyfpegyn22`
 
 # Preview
 
