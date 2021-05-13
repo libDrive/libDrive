@@ -55,7 +55,7 @@ jobs:
           cd "libDrive.Server.${{ github.event.inputs.version }}"
           tar cvf "../libDrive.Server.${{ github.event.inputs.version }}.tar" *
           cd ..
-          body="# ${{ github.event.inputs.version }}\n\n## Changelog\n\n## Working trees:\n\n- https://github.com/libDrive/server/commit/$server_commit_id\n- https://github.com/libDrive/web/commit/$web_commit_id\n\n## Screenshots"
+          body="# ${{ github.event.inputs.version }}\n\n## Changelog\n\n## Working trees\n\n- https://github.com/libDrive/server/commit/$server_commit_id\n- https://github.com/libDrive/web/commit/$web_commit_id\n\n## Screenshots"
           echo -e $body > body.txt
       - name: Create Release
         id: create_release
