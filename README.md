@@ -75,11 +75,12 @@ Help support me and libDrive by funding this project through one of the followin
 
 - [Paypal](https://paypal.me/eliasbenb)
 - [Ko-fi](https://ko-fi.com/eliasbenb)
-- `BTC` : `16J6PLKD4EmVkPYsbqgzVGjL7PaX7wQ4Hd`
-- `BCH` : `qqapgvst8mxtex4xnv8kxjdvl0rktc39uyfpegyn22`
 
 If you don't have any money to spare you can still support me by settings the `arcio` config variable to `dev`!
 
 # Preview
 
 ![preview](https://user-images.githubusercontent.com/54410649/115969336-7b063000-a54d-11eb-9cc9-9313608041bb.png)
+
+You can also access a static deployment of libDrive at <https://web.libdrive.tk> but you would need an active server to login (this is not a demo)
+
