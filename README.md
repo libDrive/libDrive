@@ -80,7 +80,7 @@ If you don't have any money to spare you can still support me by settings the `a
 
 # Preview
 
-![preview](https://user-images.githubusercontent.com/54410649/115969336-7b063000-a54d-11eb-9cc9-9313608041bb.png)
+![preview](https://user-images.githubusercontent.com/54410649/118400463-c4403000-b672-11eb-94a9-e9ad8cd1c3c3.png)
 
 You can also access a static deployment of libDrive at <https://web.libdrive.tk> but you would need an active server to login (this is not a demo)
 
