@@ -33,33 +33,49 @@
 
 # What is this repo?
 
-libDrive is a media library manager, similar to [Plex](https://www.plex.tv), that organizes Google Drive folders and offers an intuitive interface to explore them
+libDrive is a Google Drive media library manager and indexer, similar to Plex, that organizes Google Drive media to offer an intuitive and user-friendly experience.
 
-This repository (<https://github.com/libDrive/libDrive>) only serves to display the libDrive project. No source code is displayed on this repository.
+I decided to create this project to, of course, organize my Google Drive library, but also develop my coding skills, and learn JavaScript in the process.
+
+This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for information and community discussions regarding libDrive, no source code is displayed on this repository.
 
 ## Source code
 
-- Server: [libDrive/server](https://github.com/libDrive/server)
-- Web: [libDrive/web](https://github.com/libDrive/web)
+- [libDrive/server](https://github.com/libDrive/server)
+- [libDrive/web](https://github.com/libDrive/web)
+- [libDrive/cloudflare](https://github.com/libDrive/cloudflare)
+- [libDrive/heroku](https://github.com/libDrive/heroku)
+- [libDrive/config](https://github.com/libDrive/config)
 
-## Features supported
+## Features
 
-- Automatically retrieves movie and TV show metadata based on file name
-- Movie/TV show synopsis, release date, posters etc. are displayed
-- Serverless video hosting support (Clouflare as an example)
-- User management, to allow multiple accounts
-- Search feature to find specific movies/TV shows
-- Multithreaded server
-- Option to play pre-transcoded Google Drive videos
-- Admin panel UI
-- Option to install as a PWA (progressive web app)
-- User authentication (and optionally user sign up)
-- No authentication (public server)
+- Movie, TV Show and Anime media management
+- Automatic information gathering and display of:
+  - Title
+  - Release date
+  - Poster image
+  - Synopsis
+  - Language
+  - Genres
+- User management which includes:
+  - Ability to [sign up](https://github.com/libDrive/libDrive/wiki/Config#signup)
+  - Manual account creation
+  - [No authentication](https://github.com/libDrive/libDrive/wiki/Config#auth) (public)
+  - [Whitelisting](https://github.com/libDrive/libDrive/wiki/Config#category_list)
+  - [Blacklisting](https://github.com/libDrive/libDrive/wiki/Config#account_list)
+- Quality selection using Google Drive [transcoded videos](https://github.com/libDrive/libDrive/wiki/Config#transcoded)
+- Search functionallity
+- [Admin panel](https://github.com/libDrive/libDrive/wiki/Screenshots#settings-page) interface
+- [Serverless video CDN](https://github.com/libDrive/libDrive/wiki/Setup#prerequisites) host support (such as Cloudflare)
+- Automated metadata building with [custom interval](https://github.com/libDrive/libDrive/wiki/Config#build_interval)
+- Progressive web app (PWA) installation support
+- Embedded [arc.io support](https://github.com/libDrive/libDrive/wiki/Config#arcio-optional)
+- 4 custom [themes](https://github.com/libDrive/libDrive/wiki/Screenshots#themes)
+- Mobile friendly interface
 
 ## To do list
 
-- Add custom video player able to play complexly encoded videos on desktop app
-- Add music media recognition
+- *make an issue to suggest something!*
 
 # Wiki links
 
