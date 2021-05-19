@@ -89,7 +89,6 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
 
 Help support me and libDrive by funding this project through one of the following mediums
 
-- [Paypal](https://paypal.me/eliasbenb)
 - [Ko-fi](https://ko-fi.com/eliasbenb)
 
 If you don't have any money to spare you can still support me by settings the `arcio` config variable to `dev`!
