@@ -79,11 +79,12 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
 
 # Wiki links
 
-- Build: [wiki/Build](https://github.com/libDrive/libDrive/wiki/Build) 
-- Config: [wiki/Config](https://github.com/libDrive/libDrive/wiki/Config)
-- Screenshots: [wiki/Screenshots](https://github.com/libDrive/libDrive/wiki/Screenshots)
-- Setup: [wiki/Setup](https://github.com/libDrive/libDrive/wiki/Setup)
-- Structure: [wiki/Structure](https://github.com/libDrive/libDrive/wiki/Structure)
+- [wiki/Build](https://github.com/libDrive/libDrive/wiki/Build) 
+- [wiki/Config](https://github.com/libDrive/libDrive/wiki/Config)
+- [wiki/Demo](https://github.com/libDrive/libDrive/wiki/Demo)
+- [wiki/Screenshots](https://github.com/libDrive/libDrive/wiki/Screenshots)
+- [wiki/Setup](https://github.com/libDrive/libDrive/wiki/Setup)
+- [wiki/Structure](https://github.com/libDrive/libDrive/wiki/Structure)
 
 # Funding
 
