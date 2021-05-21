@@ -97,5 +97,7 @@ If you don't have any money to spare you can still support me by settings the `a
 
 ![preview](https://user-images.githubusercontent.com/54410649/118400463-c4403000-b672-11eb-94a9-e9ad8cd1c3c3.png)
 
-You can also access a static deployment of libDrive at <https://web.libdrive.tk> but you would need an active server to login (this is not a demo)
+You can access a demo of libDrive at <https://demo.libdrive.tk>
+
+You can also access a static build of libDrive at <https://web.libdrive.tk> but you would need an active server to login (this is not a demo)
 
