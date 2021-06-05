@@ -76,7 +76,9 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
 
 ## To do list
 
-- *make an issue to suggest something!*
+- Group movies of different qualities
+- Allow multiple folders for one category
+- Add srt subtitle files
 
 # Wiki links
 
