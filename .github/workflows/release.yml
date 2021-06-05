@@ -38,7 +38,6 @@ jobs:
           npm install --global yarn
           git clone https://.:${{ secrets.PAT }}@github.com/${{ github.event.inputs.server }} --branch ${{ github.event.inputs.server-branch }} --depth 1 server
           git clone https://.:${{ secrets.PAT }}@github.com/${{ github.event.inputs.web }} --branch ${{ github.event.inputs.web-branch }} --depth 1 web
-          git clone https://github.com/libDrive/libDrive.wiki.git --depth 1 wiki
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/build"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/src"
@@ -55,8 +54,6 @@ jobs:
           cp README.md LICENSE "./libDrive.Server.${{ github.event.inputs.version }}"
           cd "libDrive.Server.${{ github.event.inputs.version }}"
           tar cvf "../libDrive.Server.${{ github.event.inputs.version }}.tar" *
-          cd ../wiki
-          tar cvf "../libDrive.Wiki.${{ github.event.inputs.version }}.tar" *
           cd ..
           body="# ${{ github.event.inputs.version }}\n\n## Changelog\n\n## Working trees\n\n- https://github.com/libDrive/server/commit/$server_commit_id\n- https://github.com/libDrive/web/commit/$web_commit_id\n\n## Screenshots"
           echo -e $body > body.txt
@@ -71,6 +68,4 @@ jobs:
           body_path: "body.txt"
           draft: true
           prerelease: false
-          files: |
-           "libDrive.Server.${{ github.event.inputs.version }}.tar"
-           "libDrive.Wiki.${{ github.event.inputs.version }}.tar"
+          files: libDrive.Server.${{ github.event.inputs.version }}.tar
