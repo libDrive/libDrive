@@ -70,8 +70,9 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
 
 ## To do list
 
-- Group movies of different qualities
+- ~~Group movies of different qualities~~ (not completed, removed becasue too difficult to do)
 - Allow multiple folders for one category
+- Add anilist support for Anime
 
 # Wiki links
 
