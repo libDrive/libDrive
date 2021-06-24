@@ -72,7 +72,6 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
 ## To do list
 
 - Allow multiple folders for one category
-- Add anilist support for Anime
 
 # Wiki links
 
