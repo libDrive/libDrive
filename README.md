@@ -49,6 +49,7 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
   - Synopsis
   - Language
   - Genres
+- Uses TMDB, and optionally, Anilist
 - User management which includes:
   - Ability to [sign up](https://github.com/libDrive/libDrive/wiki/Config#signup)
   - Manual account creation
@@ -70,7 +71,6 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
 
 ## To do list
 
-- ~~Group movies of different qualities~~ (not completed, removed becasue too difficult to do)
 - Allow multiple folders for one category
 - Add anilist support for Anime
 
