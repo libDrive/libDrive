@@ -41,6 +41,7 @@ jobs:
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/build"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/src"
+          mkdir "./libDrive.Server.${{ github.event.inputs.version }}/templates"
           cd ./web
           web_commit_id=$(git rev-parse --verify HEAD)
           yarn install
