@@ -41,6 +41,7 @@ jobs:
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/build"
           mkdir "./libDrive.Server.${{ github.event.inputs.version }}/src"
+          mkdir "./libDrive.Server.${{ github.event.inputs.version }}/templates"
           cd ./web
           web_commit_id=$(git rev-parse --verify HEAD)
           yarn install
@@ -50,6 +51,7 @@ jobs:
           server_commit_id=$(git rev-parse --verify HEAD)
           mv main.py requirements.txt "../libDrive.Server.${{ github.event.inputs.version }}"
           mv ./src/* "../libDrive.Server.${{ github.event.inputs.version }}/src"
+          mv ./templates/* "../libDrive.Server.${{ github.event.inputs.version }}/templates"
           cd ..
           cp README.md LICENSE "./libDrive.Server.${{ github.event.inputs.version }}"
           cd "libDrive.Server.${{ github.event.inputs.version }}"
