@@ -47,19 +47,23 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
   - Release date
   - Poster image
   - Synopsis
+  - Rating
   - Language
   - Genres
-- Uses TMDB, and optionally, Anilist
+- Uses [TMDB](https://www.themoviedb.org), and optionally, [Anilist](https://anilist.co)
 - User management which includes:
-  - Ability to [sign up](https://github.com/libDrive/libDrive/wiki/Config#signup)
-  - Manual account creation
+  - Public [sign up](https://github.com/libDrive/libDrive/wiki/Config#signup)
+  - Closed signup (manual account creation)
   - [No authentication](https://github.com/libDrive/libDrive/wiki/Config#auth) (public)
   - [Whitelisting](https://github.com/libDrive/libDrive/wiki/Config#category_list)
   - [Blacklisting](https://github.com/libDrive/libDrive/wiki/Config#account_list)
 - Quality selection using Google Drive [transcoded videos](https://github.com/libDrive/libDrive/wiki/Config#transcoded)
-- Search functionality
+- [Search](https://github.com/libDrive/libDrive/wiki/Screenshots#search-page) functionality
+- Ability to search for media by genre
 - [Service accounts](https://github.com/libDrive/libDrive/wiki/Config#service_accounts-optional) to bypass 750GB/day download limit
-- [Softcoded subtitles](ttps://github.com/libDrive/libDrive/wiki/Config#subtitles) support, this includes user uploaded subtitles and subtitles stored on Google Drive
+- [Starred lists](https://github.com/libDrive/libDrive/wiki/Screenshots#starred-lists-page), which are like favorite lists that allow you to add any media and put them into a list
+- A pseudo watch history, which is used to automatically go to the last episode you were watching in TV Shows
+- [Softcoded subtitles](https://github.com/libDrive/libDrive/wiki/Config#subtitles) support, this includes user uploaded subtitles and subtitles stored on Google Drive
 - [Language](https://github.com/libDrive/libDrive/wiki/Config#category_list) switching support
 - [Admin panel](https://github.com/libDrive/libDrive/wiki/Screenshots#settings-page) interface
 - [Serverless video CDN](https://github.com/libDrive/libDrive/wiki/Setup#prerequisites) host support (such as Cloudflare)
@@ -77,6 +81,7 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
 
 - [wiki/Build](https://github.com/libDrive/libDrive/wiki/Build)
 - [wiki/Config](https://github.com/libDrive/libDrive/wiki/Config)
+- [wiki/Contributors](https://github.com/libDrive/libDrive/wiki/Contributors)
 - [wiki/Demo](https://github.com/libDrive/libDrive/wiki/Demo)
 - [wiki/FAQ](https://github.com/libDrive/libDrive/wiki/FAQ)
 - [wiki/Screenshots](https://github.com/libDrive/libDrive/wiki/Screenshots)
@@ -88,12 +93,13 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
 Help support me and libDrive by funding this project through one of the following mediums
 
 - [Ko-fi](https://ko-fi.com/eliasbenb)
+- [PayPal](http://paypal.me/eliasbenb)
 
 If you don't have any money to spare you can still support me by settings the `arcio` config variable to `dev`!
 
 # Preview
 
-![preview](https://user-images.githubusercontent.com/54410649/118400463-c4403000-b672-11eb-94a9-e9ad8cd1c3c3.png)
+![preview](https://user-images.githubusercontent.com/54410649/127863841-833b0b00-ff7d-4585-9e5e-09c356a0f59f.png)
 
 You can access a demo of libDrive at <https://demo.libdrive.tk>
 
