@@ -44,6 +44,7 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
 - Movie, TV Show and Anime media management
 - Automatic information gathering and display of:
   - Title
+  - Trailer
   - Release date
   - Poster image
   - Synopsis
