@@ -41,8 +41,8 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
 
 ## Features
 
-- Movie, TV Show and Anime media management
-- Automatic information gathering and display of:
+- 🍿 Movie, TV Show and Anime media management
+- 📜 Automatic information gathering and display of:
   - Title
   - Trailer
   - Release date
@@ -51,28 +51,27 @@ This repository (<https://github.com/libDrive/libDrive>) only acts as a hub for 
   - Rating
   - Language
   - Genres
-- Uses [TMDB](https://www.themoviedb.org), and optionally, [Anilist](https://anilist.co)
-- User management which includes:
+- 👥 User management which includes:
   - Public [sign up](https://github.com/libDrive/libDrive/wiki/Config#signup)
   - Closed signup (manual account creation)
   - [No authentication](https://github.com/libDrive/libDrive/wiki/Config#auth) (public)
   - [Whitelisting](https://github.com/libDrive/libDrive/wiki/Config#category_list)
   - [Blacklisting](https://github.com/libDrive/libDrive/wiki/Config#account_list)
-- Quality selection using Google Drive [transcoded videos](https://github.com/libDrive/libDrive/wiki/Config#transcoded)
-- [Search](https://github.com/libDrive/libDrive/wiki/Screenshots#search-page) functionality
-- Ability to search for media by genre
-- [Service accounts](https://github.com/libDrive/libDrive/wiki/Config#service_accounts-optional) to bypass 750GB/day download limit
-- [Starred lists](https://github.com/libDrive/libDrive/wiki/Screenshots#starred-lists-page), which are like favorite lists that allow you to add any media and put them into a list
-- A pseudo watch history, which is used to automatically go to the last episode you were watching in TV Shows
-- [Softcoded subtitles](https://github.com/libDrive/libDrive/wiki/Config#subtitles) support, this includes user uploaded subtitles and subtitles stored on Google Drive
-- [Language](https://github.com/libDrive/libDrive/wiki/Config#category_list) switching support
-- [Admin panel](https://github.com/libDrive/libDrive/wiki/Screenshots#settings-page) interface
-- [Serverless video CDN](https://github.com/libDrive/libDrive/wiki/Setup#prerequisites) host support (such as Cloudflare)
-- Automated metadata building with [custom interval](https://github.com/libDrive/libDrive/wiki/Config#build_interval)
-- Progressive web app (PWA) installation support
-- Embedded [arc.io support](https://github.com/libDrive/libDrive/wiki/Config#arcio-optional)
-- 4 custom [themes](https://github.com/libDrive/libDrive/wiki/Screenshots#themes)
-- Mobile friendly interface
+- 🔀 Quality selection using Google Drive [transcoded videos](https://github.com/libDrive/libDrive/wiki/Config#transcoded)
+- 🔎 [Search](https://github.com/libDrive/libDrive/wiki/Screenshots#search-page) functionality
+- 🤹 Genre filters
+- 🧾 [Service accounts](https://github.com/libDrive/libDrive/wiki/Config#service_accounts-optional) to bypass 750GB/day download limit
+- 🌟 [Starred lists](https://github.com/libDrive/libDrive/wiki/Screenshots#starred-lists-page), which are like favorite lists that allow you to add any media and put them into a list
+- 🕑 A pseudo watch history, which is used to automatically go to the last episode you were watching in TV Shows
+- ©️ [Softcoded subtitles](https://github.com/libDrive/libDrive/wiki/Config#subtitles) support, this includes user uploaded subtitles and subtitles stored on Google Drive
+- 🈂️ [Language](https://github.com/libDrive/libDrive/wiki/Config#category_list) switching support
+- ⚙️ [Admin panel](https://github.com/libDrive/libDrive/wiki/Screenshots#settings-page) interface
+- 📺 [Serverless video CDN](https://github.com/libDrive/libDrive/wiki/Setup#prerequisites) host support (such as Cloudflare)
+- ⌛ Automated metadata building with [custom interval](https://github.com/libDrive/libDrive/wiki/Config#build_interval)
+- 📱 Progressive web app (PWA) installation support
+- 💸 Embedded [arc.io support](https://github.com/libDrive/libDrive/wiki/Config#arcio-optional)
+- 🎨 4 custom [themes](https://github.com/libDrive/libDrive/wiki/Screenshots#themes)
+- 🤳 Mobile friendly interface
 
 ## To do list
 
